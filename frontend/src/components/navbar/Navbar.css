@@ -28,10 +28,16 @@
 .navbar-link {
     color: #545555; 
     cursor: pointer;
+    text-decoration: none;
 }
 
 .navbar-link:hover {
     color: #9B6868;
+}
+
+.navbar-link.active {
+    color: #9B6868;
+    text-decoration: underline;
 }
 
 .navbar-icons-container {
