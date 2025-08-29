@@ -1,5 +1,5 @@
 .navbar-container {
-    height: 6rem;
+    height: 5.75rem;
     position: sticky;
     top: 0;
     left: 0;
@@ -16,19 +16,20 @@
 }
 
 .navbar-logo {
-    height: 4.75rem;
+    height: 4rem;
     cursor: pointer;
 }
 
 .navbar-links-container {
     display: flex;
-    gap: 5vw;
+    gap: 5.5vw;
 }
 
 .navbar-link {
     color: #545555; 
     cursor: pointer;
     text-decoration: none;
+    font-size: large;
 }
 
 .navbar-link:hover {
@@ -37,7 +38,7 @@
 
 .navbar-link.active {
     color: #9B6868;
-    text-decoration: underline;
+    border-bottom: solid #9B6868 0.1rem;
 }
 
 .navbar-icons-container {
