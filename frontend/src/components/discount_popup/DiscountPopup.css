@@ -3,3 +3,48 @@
     flex-direction: column;
     align-items: center;
 }
+
+.discount-popup-title-and-cancel {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: start;
+}
+
+.discount-popup-title {
+    font-size: 1.75rem;
+    color: #9B6868;
+    margin: 0.5rem 0rem 0rem 7rem;
+}
+
+.discount-popup-text {
+    font-size: large;
+    color: #545555;
+}
+
+.discount-popup-email-input {
+    border: solid 1px #9B6868;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.4rem;
+    width: 18rem;
+    font-family: inherit;
+    font-size: large;
+}
+
+.discount-popup-continue-button {
+    border: none;
+    color: white;
+    background-color: #9B6868;
+    width: 19rem;
+    margin: 1rem;
+    padding: 0.40rem 0.5rem;
+    border-radius: 0.4rem;
+    font-family: inherit;
+    font-size: large;
+    cursor: pointer;
+}
+
+.discount-popup-continue-button:hover {
+    background-color: rgb(180, 133, 133);
+}
+

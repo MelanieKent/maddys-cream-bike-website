@@ -15,7 +15,7 @@ export const DiscountPopup = () => {
             position: "fixed",
             bottom: 50,
             right: 25,
-            height: 180,
+            height: 190,
             width: 400,
             padding: 16,
             borderRadius: 8,
@@ -24,13 +24,15 @@ export const DiscountPopup = () => {
           }}
         >
           <div className="discount-popup-content">
-            <IconButton size="small" onClick={handleClose}>
-              <CancelIcon />
-            </IconButton>
-            <p>Get 10% Off</p>
-            <p>Enter your email to get 10% off your first order.</p>
-            <input />
-            <button>Continue</button>
+            <div className="discount-popup-title-and-cancel">
+              <p className="discount-popup-title">Get 10% Off</p>
+              <IconButton size="small" onClick={handleClose}>
+                <CancelIcon />
+              </IconButton>
+            </div>
+            <p className="discount-popup-text">Enter your email to get 10% off your first order.</p>
+            <input className="discount-popup-email-input" type="text" placeholder="Email"/>
+            <button className="discount-popup-continue-button">Continue</button>
           </div>
         </Paper>
       )}
