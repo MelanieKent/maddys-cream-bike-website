@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Navbar } from "../../components/navbar/Navbar.jsx";
+import { DiscountPopup } from "../../components/discount_popup/DiscountPopup.jsx";
 import { SECTIONS } from "../../constants/constants";
 import "./HomePage.css"
 
@@ -36,7 +37,7 @@ export const HomePage = () => {
 
   return (
     <>
-    <Navbar activeSection={activeSection} />
+      <Navbar activeSection={activeSection} />
       <div className="homepage-container">
         { SECTIONS.map((section) => (
           <section
@@ -48,6 +49,7 @@ export const HomePage = () => {
           </section>
         ))}
       </div>
+      <DiscountPopup />
     </>
   );
 }

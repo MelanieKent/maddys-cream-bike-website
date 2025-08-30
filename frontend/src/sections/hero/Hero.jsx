@@ -9,7 +9,7 @@ export const Hero = () => {
       <img
         className="hero-image"
         src="hero_placeholder.png"
-        alt="Hero Placeholder"
+        alt="Hero placeholder"
       />
       <div className="hero-banner-container">
         <HeroBanner />

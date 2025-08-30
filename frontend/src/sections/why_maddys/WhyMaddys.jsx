@@ -2,8 +2,8 @@ import "./WhyMaddys.css";
 
 export const WhyMaddys = () => {
   return (
-    <div style={{ height: "40rem" }}>
-      Why Maddy's
+    <div className="why-maddys-container">
+      <p className="why-maddys-title">Why Maddy's?</p>
     </div>
   );
 }

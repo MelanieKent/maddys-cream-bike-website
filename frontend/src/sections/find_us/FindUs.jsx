@@ -2,8 +2,8 @@ import "./FindUs.css";
 
 export const FindUs = () => {
   return (
-    <div style={{ height: "40rem" }}>
-      Find Us
+    <div className="find-us-container">
+      <p className="find-us-title">Find Us</p>
     </div>
   );
 }

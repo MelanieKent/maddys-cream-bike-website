@@ -1,0 +1,11 @@
+.find-us-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.find-us-title {
+    font-family: 'Ephesis', cursive;
+    font-size: 3rem;
+    color: #E5CC99;
+}
