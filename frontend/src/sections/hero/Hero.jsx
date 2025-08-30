@@ -1,9 +1,23 @@
+import { HeroBanner } from "../../components/hero_banner/HeroBanner";
+import { PrimaryButton } from "../../components/button/Button";
 import "./Hero.css";
 
 export const Hero = () => {
   return (
-    <div style={{ height: "40rem" }}>
-        Hero
+   <div className="hero-section">
+    <div className="hero-image-wrapper">
+      <img
+        className="hero-image"
+        src="hero_placeholder.png"
+        alt="Hero Placeholder"
+      />
+      <div className="hero-banner-container">
+        <HeroBanner />
+      </div>
+      </div>
+      <div className="book-us-button">
+        <PrimaryButton text="Book Us" />
+      </div>
     </div>
   );
 }

@@ -1,0 +1,31 @@
+.hero-banner {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.hero-banner-image {
+  height: 5rem;
+}
+
+.hero-banner-text-container {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  width: 25rem;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-size: 1.25rem;
+  padding: 0 1rem;
+}
+
+.hero-banner-text.upper {
+  font-weight: bold;
+}
+
+.hero-banner-text.lower {
+  margin-top: -1rem;
+  margin-left: -0.5rem;
+}

@@ -1,0 +1,33 @@
+.hero-section {
+    
+}
+
+.hero-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+}
+
+.hero-image {
+  width: 100%;
+  display: block;
+}
+
+.hero-banner-container {
+  position: absolute;
+  top: 2.25rem;
+  left: -100%;
+  transition: left 0.5s ease;
+  z-index: 10;
+}
+
+.hero-image-wrapper:hover .hero-banner-container {
+  left: 0%;
+}
+
+.book-us-button {
+  position: absolute;
+  top: 8rem;
+  left: 90%;
+  z-index: 10;
+}
