@@ -16,7 +16,7 @@ export const Hero = () => {
       </div>
       </div>
       <div className="book-us-button">
-        <PrimaryButton text="Book Us" />
+        <PrimaryButton boxShadow={true}>Book Us</PrimaryButton>
       </div>
     </div>
   );

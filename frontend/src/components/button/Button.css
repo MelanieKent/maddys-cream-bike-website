@@ -6,7 +6,6 @@
     padding: 0.7rem 1.5rem;
     border-radius: 0.5rem;
     font-family: inherit;
-    box-shadow: 0.1rem 0.1rem 0.25rem #5a5a5a;
     cursor: pointer;
     z-index: 100;
 }
@@ -23,7 +22,6 @@
     padding: 0.65rem 1.15rem;
     border-radius: 0.5rem;
     font-family: inherit;
-    box-shadow: 0.1rem 0.1rem 0.25rem #c8c8c8;
     cursor: pointer;
     z-index: 100;
 }
