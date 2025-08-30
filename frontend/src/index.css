@@ -1,10 +1,14 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'Lora', serif;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #FCF3E2;
+  background: url("transparent_background_logo.png") #FCF3E2;
 }
 
 code {

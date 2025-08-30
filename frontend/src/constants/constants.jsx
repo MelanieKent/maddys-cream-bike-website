@@ -5,7 +5,7 @@ import { OurStory } from "../sections/our_story/OurStory.jsx";
 import { FindUs } from "../sections/find_us/FindUs.jsx";
 
 export const SECTIONS = [
-    { id: "hero", name: "HOME", component: <Hero /> },
+    { id: "home", name: "HOME", component: <Hero /> },
     { id: "menu-and-catering", name: "MENU & CATERING", component: <MenuAndCatering /> },
     { id: "why-maddys", name: "WHY MADDY'S", component: <WhyMaddys /> },
     { id: "our-story", name: "OUR STORY", component: <OurStory /> },

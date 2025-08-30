@@ -1,0 +1,10 @@
+.menu-catering-container {
+    display: flex;
+    justify-content: center;
+}
+
+.menu-catering-title {
+    font-family: 'Ephesis', cursive;
+    font-size: 3rem;
+    color: #9B6868;
+}
