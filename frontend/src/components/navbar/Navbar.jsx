@@ -14,7 +14,7 @@ export const Navbar = ({ activeSection }) => {
         <img
           className="navbar-logo"
           src="/maddys_logo.png"
-          alt="Maddy's Cream Bike Logo"
+          alt="Maddy's Cream Bike logo"
         />
         <div className="navbar-links-container">
           { SECTIONS.map((section) => (

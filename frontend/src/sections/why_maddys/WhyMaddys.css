@@ -1,0 +1,11 @@
+.why-maddys-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.why-maddys-title {
+    font-family: 'Ephesis', cursive;
+    font-size: 3rem;
+    color: #9B6868;
+}
