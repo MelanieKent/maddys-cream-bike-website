@@ -44,6 +44,24 @@
     background: url("../../transparent_background_logo.png") #9B6868;
 }
 
+.catering-inquiry-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: fit-content;
+}
+
+.catering-inquiry-form {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 100%;
+}
+
+.catering-inquiry-form-spacer {
+    height: 4rem;
+}
+
 .catering-inquiry-title {
     font-family: 'Ephesis', cursive;
     font-size: 3rem;
@@ -53,6 +71,12 @@
 
 .catering-inquiry-text {
     color: #F1E7D2;
+    font-size: large;
+}
+
+.submit-button-container {
+    margin-top: 2rem;
+    margin-right: -2rem;
 }
 
 .faqs-section {
@@ -63,7 +87,27 @@
 }
 
 .faqs-title {
+    margin-bottom: 0;
     font-family: 'Ephesis', cursive;
     font-size: 3rem;
     color: #9B6868;
 }
+
+.faq-subsection {
+    margin-bottom: 2rem;
+}
+
+.faq-subtitle {
+    margin: 2rem 0;
+    font-size: large;
+    font-weight: bold;
+    color: #9B6868;
+}
+
+.accordion-title {
+    margin: 0;
+    font-family: 'Lora', serif;
+    font-size: large;
+    color: #545555;
+}
+
