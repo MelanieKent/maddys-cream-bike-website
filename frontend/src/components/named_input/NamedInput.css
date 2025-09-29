@@ -25,6 +25,10 @@
     border: 2px solid #E9CF9C;
 }
 
+.named-input::placeholder {
+    color: #F1E7D2;  
+}
+
 .named-textarea {
     width: 100%;
     background-color: transparent;
@@ -41,6 +45,6 @@
     border: 2px solid #E9CF9C;
 }
 
-::placeholder {
+.named-textarea::placeholder {
     color: #F1E7D2;
 }

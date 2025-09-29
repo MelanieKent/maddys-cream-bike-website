@@ -1,3 +1,35 @@
 .right-cookie-banner-container {
-    margin: 2rem;
+    margin: 1rem;
+}
+
+.right-cookie-banner {
+    transform: rotate(180deg);
+    z-index: -100;
+}
+
+.right-cookie-banner-content {
+    display: flex;
+    align-items: center;
+    text-align: end;
+    gap: 2rem;
+    margin-top: -14rem;
+    margin-left: 10rem;
+    z-index: 100;
+}
+
+.sammy-image {
+    width: 18rem;
+}
+
+.cookie-banner-title {
+    font-family: 'Ephesis', cursive;
+    font-size: 2.5rem;
+    color: #9B6868;
+    margin-top: -0.5rem;
+    margin-bottom: 0rem;
+}
+
+.cookie-banner-description {
+    color: #545555;
+    width: 45rem;
 }
