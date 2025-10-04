@@ -20,7 +20,7 @@ export const Navbar = ({ activeSection }) => {
           { SECTIONS.map((section) => (
             <a
               key={section.id}
-              href={`/#/#${section.id}`}
+              href={`#${section.id}`}
               className={`navbar-link ${
                 activeSection === section.id ? "active" : ""
               }`}

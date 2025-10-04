@@ -36,13 +36,13 @@ export const HomePage = () => {
   }, []);
 
   useEffect(() => {
-    const hash = window.location.hash.split("#")[1];
+    const hash = window.location.hash.substring(1);
     if (hash && sectionRefs.current[hash]) {
       sectionRefs.current[hash].scrollIntoView({ behavior: "smooth" });
     }
 
     const onHashChange = () => {
-      const newHash = window.location.hash.split("#")[2];
+      const newHash = window.location.hash.substring(1);
       if (newHash && sectionRefs.current[newHash]) {
         sectionRefs.current[newHash].scrollIntoView({ behavior: "smooth" });
       }
