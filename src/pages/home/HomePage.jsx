@@ -35,24 +35,24 @@ export const HomePage = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const hash = window.location.hash.substring(1);
-    if (hash && sectionRefs.current[hash]) {
-      sectionRefs.current[hash].scrollIntoView({ behavior: "smooth" });
-    }
+  // useEffect(() => {
+  //   const hash = window.location.hash.substring(1);
+  //   if (hash && sectionRefs.current[hash]) {
+  //     sectionRefs.current[hash].scrollIntoView({ behavior: "smooth" });
+  //   }
 
-    const onHashChange = () => {
-      const newHash = window.location.hash.substring(1);
-      if (newHash && sectionRefs.current[newHash]) {
-        sectionRefs.current[newHash].scrollIntoView({ behavior: "smooth" });
-      }
-    };
+  //   const onHashChange = () => {
+  //     const newHash = window.location.hash.substring(1);
+  //     if (newHash && sectionRefs.current[newHash]) {
+  //       sectionRefs.current[newHash].scrollIntoView({ behavior: "smooth" });
+  //     }
+  //   };
 
-    window.addEventListener("hashchange", onHashChange);
-    return () => {
-      window.removeEventListener("hashchange", onHashChange);
-    };
-  }, []);
+  //   window.addEventListener("hashchange", onHashChange);
+  //   return () => {
+  //     window.removeEventListener("hashchange", onHashChange);
+  //   };
+  // }, []);
 
   return (
     <>

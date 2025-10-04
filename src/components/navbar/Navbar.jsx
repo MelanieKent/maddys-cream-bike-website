@@ -1,3 +1,4 @@
+import { HashLink } from 'react-router-hash-link';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookF,
@@ -18,15 +19,22 @@ export const Navbar = ({ activeSection }) => {
         />
         <div className="navbar-links-container">
           { SECTIONS.map((section) => (
-            <a
-              key={section.id}
-              href={`#${section.id}`}
+            // <a
+            //   key={section.id}
+            //   href={`/#${section.id}`}
+            //   className={`navbar-link ${
+            //     activeSection === section.id ? "active" : ""
+            //   }`}
+            // >
+            <HashLink
               className={`navbar-link ${
                 activeSection === section.id ? "active" : ""
               }`}
+              key={section.id}
+              to={`/#${section.id}`}
             >
               { section.name }
-            </a>
+            </HashLink>
           ))}
           <div className="navbar-icons-container">
             <a href="https://www.facebook.com/people/Maddys-Cream-Bike/61570810093626/">
