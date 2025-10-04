@@ -8,7 +8,7 @@ export const RightCookieBanner = ({
 }) => {
   return (
     <div className="right-cookie-banner-container">
-      <img className="right-cookie-banner" src="cookie_banner.png" alt="Cookie banner" />
+      <img src="cookie_banner_right.png" alt="Cookie banner" />
       <div className="right-cookie-banner-content">
         <div>
           <p className="cookie-banner-title">{title}</p>

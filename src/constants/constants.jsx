@@ -11,3 +11,11 @@ export const SECTIONS = [
     { id: "our-story", name: "OUR STORY", component: <OurStory /> },
     { id: "find-us", name: "FIND US", component: <FindUs /> },
 ]
+
+// For phones, screen size < 600px
+export const XS_SCREEN_SIZE = 600;
+
+// For tablets, 600px <= screen size < 1200px
+export const MD_SCREEN_SIZE = 1200;
+
+// For laptops and desktops, screen size >= 1200px

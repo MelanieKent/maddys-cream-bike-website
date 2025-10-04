@@ -12,6 +12,7 @@
 
 .sammy-image {
     width: 18rem;
+    z-index: 100 !important;
 }
 
 .cookie-banner-title {

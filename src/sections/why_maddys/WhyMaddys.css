@@ -1,0 +1,25 @@
+.why-maddys-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.why-maddys-title {
+    font-family: 'Ephesis', cursive;
+    font-size: 3rem;
+    color: #9B6868;
+}
+
+.our-mission-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url("../../transparent_background_logo.png") #9B6868;
+}
+
+.our-mission-title {
+    font-family: 'Ephesis', cursive;
+    font-size: 3rem;
+    color: #E5CC99;  
+}

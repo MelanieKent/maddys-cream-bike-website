@@ -22,6 +22,8 @@ export const MenuAndCatering = () => {
           alt="Maddy's Bike Illustration"
         />
       </div>
+
+      {/* !!!! */}
       <PrimaryButton>
         <div className="download-menu-button">
           <DownloadIcon />
@@ -53,8 +55,10 @@ export const MenuAndCatering = () => {
         title="Sweet Ube Kiss"
         description="Brings together pillowy Ube Marbled cookies and creamy Vanilla Bean ice cream, creating a tender moment you’ll want to savor."
       />
+      {/* !!!! */}
+      
       <div>
-        <img className="more-coming-soon-banner" src="cookie_banner.png" alt="" />
+        <img className="more-coming-soon-banner" src="cookie_banner_left.png" alt="" />
         <p className="more-coming-soon-text">More Coming Soon...</p>
         <div className="menu-catering-spacer"></div>
       </div>
@@ -67,7 +71,9 @@ export const MenuAndCatering = () => {
             * We currently only offer catering services and pre-prepared boxes. 
             Please fill out the form below if you would like to book Maddy&#39;s for an event!
           </p>
+
           <form className="catering-inquiry-form">
+            {/* !!! */}
             {/* TODO */}
             <NamedInput title="Full Name" placeholder="E.g. John Smith" required={true} />
             <NamedInput title="Business Name (if applicable)" placeholder="E.g. Some Company" />
@@ -81,11 +87,17 @@ export const MenuAndCatering = () => {
             <div className="submit-button-container">
               <SecondaryButton>Submit</SecondaryButton>
             </div>
+          {/* !!! */}
           </form>
+          
           <div className="catering-inquiry-form-spacer"></div>
         </div>
       </div>
-      <img src="placeholder_1.png" alt="Placeholder 1" />
+
+      {/* !! */}
+      <img className="menu-catering-visual-spacer" src="placeholder_1.png" alt="Placeholder 1" />
+      {/* !! */}
+
       <div className="faqs-section">
         <p className="faqs-title">FAQs</p>
         
@@ -236,7 +248,11 @@ export const MenuAndCatering = () => {
         </div>
 
       </div>
-      <img src="placeholder_2.png" alt="Placeholder 2" />
+
+      {/* ! */}
+      <img className="menu-catering-visual-spacer" src="placeholder_2.png" alt="Placeholder 2" />
+      {/* ! */}
+
     </div>
   );
 }

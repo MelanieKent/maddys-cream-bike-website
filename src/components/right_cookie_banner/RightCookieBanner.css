@@ -1,10 +1,6 @@
 .right-cookie-banner-container {
+    perspective: 1000px;
     margin: 1rem;
-}
-
-.right-cookie-banner {
-    transform: rotate(180deg);
-    z-index: -100;
 }
 
 .right-cookie-banner-content {
