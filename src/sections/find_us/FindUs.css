@@ -24,6 +24,38 @@
     color: #9B6868;
 }
 
+.previous-events-slider {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding: 20px 0;
+    cursor: pointer;
+}
+
+.previous-events-slider:hover .events-image-slide {
+    animation-play-state: paused;
+}
+
+.events-image-slide {
+    display: flex;
+    animation: scroll 40s linear infinite;
+    width: max-content;
+}
+
+.events-image-slide img {
+  height: 12rem;
+  width: 10rem;
+  max-width: 10rem;
+  margin: 0 2rem;
+  transition: transform 0.5s;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.events-image-slide img:hover {
+  transform: scale(1.2);
+}
+
 .footer {
     width: 100%;
     display: flex;
@@ -34,4 +66,13 @@
 
 .footer-copyright-text {
     color: #FCF3E2;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
