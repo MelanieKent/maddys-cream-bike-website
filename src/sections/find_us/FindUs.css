@@ -16,12 +16,64 @@
     font-family: 'Ephesis', cursive;
     font-size: 3rem;
     color: #E9CF9C;
+    margin-bottom: 1.25rem;
+}
+
+.find-us-link, .find-us-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #F1E7D2;
+  font-weight: bold;
+  margin: 0;
+}
+
+.find-us-link {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.find-us-location {
+    margin-bottom: 4rem;
 }
 
 .previous-events-title {
     font-family: 'Ephesis', cursive;
     font-size: 3rem;
     color: #9B6868;
+}
+
+.previous-events-slider {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding: 1.25rem 0;
+    cursor: pointer;
+    margin-bottom: 4rem;
+}
+
+.previous-events-slider:hover .events-image-slide {
+    animation-play-state: paused;
+}
+
+.events-image-slide {
+    display: flex;
+    animation: scroll 40s linear infinite;
+    width: max-content;
+}
+
+.events-image-slide img {
+  height: 12rem;
+  width: 10rem;
+  max-width: 10rem;
+  margin: 0 2rem;
+  transition: transform 0.5s;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.events-image-slide img:hover {
+  transform: scale(1.2);
 }
 
 .footer {
@@ -34,4 +86,13 @@
 
 .footer-copyright-text {
     color: #FCF3E2;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }

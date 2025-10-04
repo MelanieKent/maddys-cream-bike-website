@@ -20,7 +20,7 @@ export const Navbar = ({ activeSection }) => {
           { SECTIONS.map((section) => (
             <a
               key={section.id}
-              href={`#${section.id}`}
+              href={`/#/#${section.id}`}
               className={`navbar-link ${
                 activeSection === section.id ? "active" : ""
               }`}
@@ -29,9 +29,23 @@ export const Navbar = ({ activeSection }) => {
             </a>
           ))}
           <div className="navbar-icons-container">
-            <FontAwesomeIcon className="navbar-icon" icon={faFacebookF} size="lg" />
-            <FontAwesomeIcon className="navbar-icon" icon={faInstagram} size="lg" />
-            <FontAwesomeIcon className="navbar-icon" icon={faEnvelope} size="lg" />
+            <a href="https://www.facebook.com/people/Maddys-Cream-Bike/61570810093626/">
+              <FontAwesomeIcon
+                className="navbar-icon"
+                icon={faFacebookF}
+                size="lg"
+              />
+            </a>
+            <a href="https://www.instagram.com/maddyscreambike/">
+              <FontAwesomeIcon
+                className="navbar-icon"
+                icon={faInstagram}
+                size="lg"
+              />
+            </a>
+            <a href="mailto:Caroline@MaddysCreamBike.com">
+              <FontAwesomeIcon className="navbar-icon" icon={faEnvelope} size="lg" />
+            </a>
           </div>
         </div>
       </div>

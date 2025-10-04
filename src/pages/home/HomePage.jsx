@@ -17,7 +17,7 @@ export const HomePage = () => {
           }
         });
       },
-      { threshold: 0.6 }
+      { threshold: 0.15 }
     );
 
     SECTIONS.forEach((section) => {
@@ -32,6 +32,25 @@ export const HomePage = () => {
           observer.unobserve(sectionRefs.current[section.id]);
         }
       });
+    };
+  }, []);
+
+  useEffect(() => {
+    const hash = window.location.hash.split("#")[1];
+    if (hash && sectionRefs.current[hash]) {
+      sectionRefs.current[hash].scrollIntoView({ behavior: "smooth" });
+    }
+
+    const onHashChange = () => {
+      const newHash = window.location.hash.split("#")[2];
+      if (newHash && sectionRefs.current[newHash]) {
+        sectionRefs.current[newHash].scrollIntoView({ behavior: "smooth" });
+      }
+    };
+
+    window.addEventListener("hashchange", onHashChange);
+    return () => {
+      window.removeEventListener("hashchange", onHashChange);
     };
   }, []);
 

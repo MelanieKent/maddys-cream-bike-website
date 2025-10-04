@@ -17,7 +17,7 @@
 }
 
 .bike-illustration-image {
-    width: 12rem;
+    width: 7.5rem;
     height: fit-content;
     margin-left: -1rem;
 }
@@ -34,7 +34,6 @@
 
 .more-coming-soon-banner {
     width: 28rem;
-    margin-top: 2rem;
 }
 
 .more-coming-soon-text {
@@ -89,6 +88,7 @@
 }
 
 .menu-catering-visual-spacer {
+    height: auto;
     width: 100%;
 }
 

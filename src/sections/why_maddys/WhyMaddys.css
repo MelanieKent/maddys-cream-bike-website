@@ -18,8 +18,27 @@
     background: url("../../transparent_background_logo.png") #9B6868;
 }
 
+.our-mission-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.our-mission-image {
+    width: 14rem;
+    margin: 4rem 0rem;
+}
+
 .our-mission-title {
     font-family: 'Ephesis', cursive;
     font-size: 3rem;
     color: #E5CC99;  
+}
+
+.our-mission-text-container {
+    max-width: 60rem;
+}
+
+.our-mission-text {
+    color: #F1E7D2;
 }

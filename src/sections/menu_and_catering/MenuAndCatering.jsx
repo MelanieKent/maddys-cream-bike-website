@@ -22,8 +22,6 @@ export const MenuAndCatering = () => {
           alt="Maddy's Bike Illustration"
         />
       </div>
-
-      {/* !!!! */}
       <PrimaryButton>
         <div className="download-menu-button">
           <DownloadIcon />
@@ -55,8 +53,6 @@ export const MenuAndCatering = () => {
         title="Sweet Ube Kiss"
         description="Brings together pillowy Ube Marbled cookies and creamy Vanilla Bean ice cream, creating a tender moment you’ll want to savor."
       />
-      {/* !!!! */}
-      
       <div>
         <img
           className="more-coming-soon-banner"
@@ -66,8 +62,6 @@ export const MenuAndCatering = () => {
         <p className="more-coming-soon-text">More Coming Soon...</p>
         <div className="menu-catering-spacer"></div>
       </div>
-      
-      {/* TODO: fix Intersection Observer bug */}
       <div className="catering-inquiry-section">
         <p className="catering-inquiry-title">Catering Inquiry</p>
         <div className="catering-inquiry-form-container">
@@ -75,9 +69,7 @@ export const MenuAndCatering = () => {
             * We currently only offer catering services and pre-prepared boxes. 
             Please fill out the form below if you would like to book Maddy&#39;s for an event!
           </p>
-
           <form className="catering-inquiry-form">
-            {/* !!! */}
             {/* TODO */}
             <NamedInput title="Full Name" placeholder="E.g. John Smith" required={true} />
             <NamedInput title="Business Name (if applicable)" placeholder="E.g. Some Company" />
@@ -91,24 +83,17 @@ export const MenuAndCatering = () => {
             <div className="submit-button-container">
               <SecondaryButton>Submit</SecondaryButton>
             </div>
-          {/* !!! */}
           </form>
-          
           <div className="catering-inquiry-form-spacer"></div>
         </div>
       </div>
-
-      {/* !! */}
       <img
         className="menu-catering-visual-spacer"
         src={`${process.env.PUBLIC_URL}/placeholder_1.png`}
         alt="Placeholder 1"
       />
-      {/* !! */}
-
       <div className="faqs-section">
         <p className="faqs-title">FAQs</p>
-        
         {/* TODO: make this scalable with nested looping */}
         <div className="faq-subsection">
           <p className="faq-subtitle">Sub Section One</p>
@@ -253,18 +238,95 @@ export const MenuAndCatering = () => {
               malesuada lacus ex, sit amet blandit leo lobortis eget.
             </AccordionDetails>
           </Accordion>
+          <p className="faq-subtitle">Sub Section Three</p>
+          <Accordion
+            sx={{
+              backgroundColor: "transparent",
+              boxShadow: "none",
+              border: "1px solid #9B6868",
+              marginBottom: "1rem"
+            }}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1-content"
+              id="panel1-header"
+            >
+              <p className="accordion-title">Can you accommodate dietary restrictions?</p>
+            </AccordionSummary>
+            <AccordionDetails sx={{ color: "#9B6868" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+              malesuada lacus ex, sit amet blandit leo lobortis eget.
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            sx={{
+              backgroundColor: "transparent",
+              boxShadow: "none",
+              border: "1px solid #9B6868",
+              marginBottom: "1rem"
+            }}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel2-content"
+              id="panel2-header"
+            >
+              <p className="accordion-title">Do you need power or special setup?</p>
+            </AccordionSummary>
+            <AccordionDetails sx={{ color: "#9B6868" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+              malesuada lacus ex, sit amet blandit leo lobortis eget.
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            sx={{
+              backgroundColor: "transparent",
+              boxShadow: "none",
+              border: "1px solid #9B6868",
+              marginBottom: "1rem"
+            }}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel3-content"
+              id="panel3-header"
+            >
+              <p className="accordion-title">What areas do you serve?</p>
+            </AccordionSummary>
+            <AccordionDetails sx={{ color: "#9B6868" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+              malesuada lacus ex, sit amet blandit leo lobortis eget.
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            sx={{
+              backgroundColor: "transparent",
+              boxShadow: "none",
+              border: "1px solid #9B6868",
+              marginBottom: "1rem"
+            }}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel3-content"
+              id="panel3-header"
+            >
+              <p className="accordion-title">What’s your cancellation policy?</p>
+            </AccordionSummary>
+            <AccordionDetails sx={{ color: "#9B6868" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+              malesuada lacus ex, sit amet blandit leo lobortis eget.
+            </AccordionDetails>
+          </Accordion>
         </div>
-
       </div>
-
-      {/* ! */}
+      <div className="menu-catering-spacer"></div>
       <img
         className="menu-catering-visual-spacer"
         src={`${process.env.PUBLIC_URL}/placeholder_2.png`}
         alt="Placeholder 2"
       />
-      {/* ! */}
-
     </div>
   );
 }
