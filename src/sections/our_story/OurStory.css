@@ -1,0 +1,20 @@
+.our-story-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.our-story-title {
+    font-family: 'Ephesis', cursive;
+    font-size: 3rem;
+    color: #9B6868;
+}
+
+.our-story-visual-spacer {
+    width: 100%;
+}
+
+.testimonials-subheader {
+    color: #9B6868;
+    margin-top: -2rem;
+}

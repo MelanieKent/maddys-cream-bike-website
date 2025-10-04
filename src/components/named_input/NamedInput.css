@@ -1,0 +1,50 @@
+.named-input-container {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.named-text {
+    font-size: large;
+    font-weight: bold;
+    color: #F1E7D2;
+}
+
+.named-input {
+    width: 100%;
+    background-color: transparent;
+    color: #F1E7D2;
+    font-family: inherit;
+    font-size: large;
+    border: 1px solid #F1E7D2;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.named-input:focus {
+    outline: none;
+    border: 2px solid #E9CF9C;
+}
+
+.named-input::placeholder {
+    color: #F1E7D2;  
+}
+
+.named-textarea {
+    width: 100%;
+    background-color: transparent;
+    color: #F1E7D2;
+    font-family: inherit;
+    font-size: large;
+    border: 1px solid #F1E7D2;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.named-textarea:focus {
+    outline: none;
+    border: 2px solid #E9CF9C;
+}
+
+.named-textarea::placeholder {
+    color: #F1E7D2;
+}
