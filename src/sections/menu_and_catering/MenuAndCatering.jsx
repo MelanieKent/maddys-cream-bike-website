@@ -18,7 +18,7 @@ export const MenuAndCatering = () => {
         <p className="menu-catering-title">Menu and Catering</p>
         <img
           className="bike-illustration-image"
-          src="maddys_bike_illustration.png"
+          src={`${process.env.PUBLIC_URL}/maddys_bike_illustration.png`}
           alt="Maddy's Bike Illustration"
         />
       </div>
@@ -32,25 +32,25 @@ export const MenuAndCatering = () => {
       </PrimaryButton>
       <div className="menu-catering-spacer"></div>
       <LeftCookieBanner
-        img_src="placeholder_cookie_1.png"
+        img_src={`${process.env.PUBLIC_URL}/placeholder_cookie_1.png`}
         img_alt="Placeholder cookie 1"
         title="Sweet Chip Classic"
         description="A timeless pairing of Mini Chocolate Chip cookies wrapped around a scoop of dreamy Vanilla Bean ice cream. It’s nostalgic, playful, and just sweet enough to steal your heart. A gentle nod to first loves and forever favorites."
       />
       <RightCookieBanner
-        img_src="placeholder_cookie_2.png"
+        img_src={`${process.env.PUBLIC_URL}/placeholder_cookie_2.png`}
         img_alt="Placeholder cookie 2"
         title="Lemonberry Bliss"
         description="A lively duet of tart and sweet — brings together golden Lemon cookies and lush Oregon Strawberry ice cream for a flavor that's as cheerful as it is delicious."
       />
       <LeftCookieBanner
-        img_src="placeholder_cookie_3.png"
+        img_src={`${process.env.PUBLIC_URL}/placeholder_cookie_3.png`}
         img_alt="Placeholder cookie 3"
         title="Coco Mint Lover"
         description="Rich Double Chocolate cookies with a kiss of Sea Salt embrace cool Mint Chocolate Chip ice cream for a refreshingly bold affair. With just the right touch of sweetness, it’s a love story for the true chocolate devotee."
       />
       <RightCookieBanner
-        img_src="placeholder_cookie_4.png"
+        img_src={`${process.env.PUBLIC_URL}/placeholder_cookie_4.png`}
         img_alt="Placeholder cookie 4"
         title="Sweet Ube Kiss"
         description="Brings together pillowy Ube Marbled cookies and creamy Vanilla Bean ice cream, creating a tender moment you’ll want to savor."
@@ -58,7 +58,11 @@ export const MenuAndCatering = () => {
       {/* !!!! */}
       
       <div>
-        <img className="more-coming-soon-banner" src="cookie_banner_left.png" alt="" />
+        <img
+          className="more-coming-soon-banner"
+          src={`${process.env.PUBLIC_URL}/cookie_banner_left.png`}
+          alt=""
+        />
         <p className="more-coming-soon-text">More Coming Soon...</p>
         <div className="menu-catering-spacer"></div>
       </div>
@@ -95,7 +99,11 @@ export const MenuAndCatering = () => {
       </div>
 
       {/* !! */}
-      <img className="menu-catering-visual-spacer" src="placeholder_1.png" alt="Placeholder 1" />
+      <img
+        className="menu-catering-visual-spacer"
+        src={`${process.env.PUBLIC_URL}/placeholder_1.png`}
+        alt="Placeholder 1"
+      />
       {/* !! */}
 
       <div className="faqs-section">
@@ -250,7 +258,11 @@ export const MenuAndCatering = () => {
       </div>
 
       {/* ! */}
-      <img className="menu-catering-visual-spacer" src="placeholder_2.png" alt="Placeholder 2" />
+      <img
+        className="menu-catering-visual-spacer"
+        src={`${process.env.PUBLIC_URL}/placeholder_2.png`}
+        alt="Placeholder 2"
+      />
       {/* ! */}
 
     </div>

@@ -8,7 +8,7 @@ export const Hero = () => {
     <div className="hero-image-wrapper">
       <img
         className="hero-image"
-        src="hero_placeholder.png"
+        src={`${process.env.PUBLIC_URL}/hero_placeholder.png`}
         alt="Hero placeholder"
       />
       <div className="hero-banner-container">

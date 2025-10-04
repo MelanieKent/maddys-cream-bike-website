@@ -8,7 +8,7 @@ export const LeftCookieBanner = ({
 }) => {
   return (
     <div className="left-cookie-banner-container">
-      <img src="cookie_banner_left.png" alt="Cookie banner" />
+      <img src={`${process.env.PUBLIC_URL}/cookie_banner_left.png`} alt="Cookie banner" />
       <div className="left-cookie-banner-content">
         <img className="sammy-image" src={img_src} alt={img_alt} />
         <div>

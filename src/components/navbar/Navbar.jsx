@@ -13,7 +13,7 @@ export const Navbar = ({ activeSection }) => {
       <div className="navbar-inner-container">
         <img
           className="navbar-logo"
-          src="/maddys_logo.png"
+          src={`${process.env.PUBLIC_URL}/maddys_logo.png`}
           alt="Maddy's Cream Bike logo"
         />
         <div className="navbar-links-container">
