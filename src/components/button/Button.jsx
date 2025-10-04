@@ -7,7 +7,7 @@ export const PrimaryButton = ({
   return (
     <button
       className="primary-button"
-      style={ boxShadow ? { boxShadow: "0.1rem 0.1rem 0.25rem #5a5a5a" }: {}}
+      style={ boxShadow ? { boxShadow: "0.1rem 0.1rem 0.25rem #40404070" }: {}}
     >
       {children}
     </button>

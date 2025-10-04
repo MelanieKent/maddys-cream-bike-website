@@ -16,6 +16,25 @@
     font-family: 'Ephesis', cursive;
     font-size: 3rem;
     color: #E9CF9C;
+    margin-bottom: 1.25rem;
+}
+
+.find-us-link, .find-us-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #F1E7D2;
+  font-weight: bold;
+  margin: 0;
+}
+
+.find-us-link {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.find-us-location {
+    margin-bottom: 4rem;
 }
 
 .previous-events-title {
@@ -28,8 +47,9 @@
     overflow: hidden;
     width: 100%;
     position: relative;
-    padding: 20px 0;
+    padding: 1.25rem 0;
     cursor: pointer;
+    margin-bottom: 4rem;
 }
 
 .previous-events-slider:hover .events-image-slide {

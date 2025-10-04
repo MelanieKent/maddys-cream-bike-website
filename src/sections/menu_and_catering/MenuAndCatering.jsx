@@ -238,8 +238,90 @@ export const MenuAndCatering = () => {
               malesuada lacus ex, sit amet blandit leo lobortis eget.
             </AccordionDetails>
           </Accordion>
+          <p className="faq-subtitle">Sub Section Three</p>
+          <Accordion
+            sx={{
+              backgroundColor: "transparent",
+              boxShadow: "none",
+              border: "1px solid #9B6868",
+              marginBottom: "1rem"
+            }}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1-content"
+              id="panel1-header"
+            >
+              <p className="accordion-title">Can you accommodate dietary restrictions?</p>
+            </AccordionSummary>
+            <AccordionDetails sx={{ color: "#9B6868" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+              malesuada lacus ex, sit amet blandit leo lobortis eget.
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            sx={{
+              backgroundColor: "transparent",
+              boxShadow: "none",
+              border: "1px solid #9B6868",
+              marginBottom: "1rem"
+            }}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel2-content"
+              id="panel2-header"
+            >
+              <p className="accordion-title">Do you need power or special setup?</p>
+            </AccordionSummary>
+            <AccordionDetails sx={{ color: "#9B6868" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+              malesuada lacus ex, sit amet blandit leo lobortis eget.
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            sx={{
+              backgroundColor: "transparent",
+              boxShadow: "none",
+              border: "1px solid #9B6868",
+              marginBottom: "1rem"
+            }}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel3-content"
+              id="panel3-header"
+            >
+              <p className="accordion-title">What areas do you serve?</p>
+            </AccordionSummary>
+            <AccordionDetails sx={{ color: "#9B6868" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+              malesuada lacus ex, sit amet blandit leo lobortis eget.
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            sx={{
+              backgroundColor: "transparent",
+              boxShadow: "none",
+              border: "1px solid #9B6868",
+              marginBottom: "1rem"
+            }}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel3-content"
+              id="panel3-header"
+            >
+              <p className="accordion-title">What’s your cancellation policy?</p>
+            </AccordionSummary>
+            <AccordionDetails sx={{ color: "#9B6868" }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+              malesuada lacus ex, sit amet blandit leo lobortis eget.
+            </AccordionDetails>
+          </Accordion>
         </div>
       </div>
+      <div className="menu-catering-spacer"></div>
       <img
         className="menu-catering-visual-spacer"
         src={`${process.env.PUBLIC_URL}/placeholder_2.png`}
