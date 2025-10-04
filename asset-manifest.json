@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/MelanieKent/maddys-cream-bike-website/static/css/main.cbf0365e.css",
+    "main.js": "/MelanieKent/maddys-cream-bike-website/static/js/main.29ac4668.js",
+    "static/js/453.670e15c7.chunk.js": "/MelanieKent/maddys-cream-bike-website/static/js/453.670e15c7.chunk.js",
+    "static/media/transparent_background_logo.png": "/MelanieKent/maddys-cream-bike-website/static/media/transparent_background_logo.6100dfc1b13630809127.png",
+    "index.html": "/MelanieKent/maddys-cream-bike-website/index.html",
+    "main.cbf0365e.css.map": "/MelanieKent/maddys-cream-bike-website/static/css/main.cbf0365e.css.map",
+    "main.29ac4668.js.map": "/MelanieKent/maddys-cream-bike-website/static/js/main.29ac4668.js.map",
+    "453.670e15c7.chunk.js.map": "/MelanieKent/maddys-cream-bike-website/static/js/453.670e15c7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cbf0365e.css",
+    "static/js/main.29ac4668.js"
+  ]
+}
