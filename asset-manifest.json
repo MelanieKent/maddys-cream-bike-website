@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/maddys-cream-bike-website/static/css/main.593f1fe7.css",
-    "main.js": "/maddys-cream-bike-website/static/js/main.36f6c0e9.js",
+    "main.css": "/maddys-cream-bike-website/static/css/main.14ab33bb.css",
+    "main.js": "/maddys-cream-bike-website/static/js/main.3088760b.js",
     "static/js/453.670e15c7.chunk.js": "/maddys-cream-bike-website/static/js/453.670e15c7.chunk.js",
     "static/media/transparent_background_logo.png": "/maddys-cream-bike-website/static/media/transparent_background_logo.6100dfc1b13630809127.png",
     "index.html": "/maddys-cream-bike-website/index.html",
-    "main.593f1fe7.css.map": "/maddys-cream-bike-website/static/css/main.593f1fe7.css.map",
-    "main.36f6c0e9.js.map": "/maddys-cream-bike-website/static/js/main.36f6c0e9.js.map",
+    "main.14ab33bb.css.map": "/maddys-cream-bike-website/static/css/main.14ab33bb.css.map",
+    "main.3088760b.js.map": "/maddys-cream-bike-website/static/js/main.3088760b.js.map",
     "453.670e15c7.chunk.js.map": "/maddys-cream-bike-website/static/js/453.670e15c7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.593f1fe7.css",
-    "static/js/main.36f6c0e9.js"
+    "static/css/main.14ab33bb.css",
+    "static/js/main.3088760b.js"
   ]
 }
