@@ -10,13 +10,13 @@
 }
 
 .named-input {
-    width: 100%;
+    width: 98%;
     background-color: transparent;
     color: #F1E7D2;
     font-family: inherit;
     font-size: large;
     border: 1px solid #F1E7D2;
-    padding: 1rem;
+    padding: 1rem 0rem 1rem 1rem;
     border-radius: 0.5rem;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .named-textarea {
-    width: 100%;
+    width: 96%;
     background-color: transparent;
     color: #F1E7D2;
     font-family: inherit;
@@ -38,6 +38,7 @@
     border: 1px solid #F1E7D2;
     padding: 1rem;
     border-radius: 0.5rem;
+    resize: vertical;
 }
 
 .named-textarea:focus {

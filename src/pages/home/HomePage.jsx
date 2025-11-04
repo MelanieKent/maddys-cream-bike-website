@@ -17,7 +17,7 @@ export const HomePage = () => {
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.14 }
     );
 
     SECTIONS.forEach((section) => {
@@ -68,7 +68,7 @@ export const HomePage = () => {
           </section>
         ))}
       </div>
-      <DiscountPopup />
+      {/* <DiscountPopup /> */}
     </>
   );
 }

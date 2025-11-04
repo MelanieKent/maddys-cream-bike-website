@@ -10,6 +10,35 @@
     color: #9B6868;
 }
 
+.why-maddys-item-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.why-maddys-item-icon {
+    text-align: center;
+    color: #E5CC99;
+}
+
+.why-maddys-item-icon-dark {
+    text-align: center;
+    color: #c09f5c;
+}
+
+.why-maddys-item-title {
+    color: #9B6868;
+    text-align: center;
+    font-weight: bold;
+}
+
+.why-maddys-item-description {
+    color: #535353;
+    text-align: center;
+    margin-top: 0;
+}
+
 .our-mission-container {
     width: 100%;
     display: flex;
@@ -20,13 +49,13 @@
 
 .our-mission-image-container {
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
 }
 
 .our-mission-image {
     width: 14rem;
-    margin: 4rem 0rem;
+    margin: 3rem 2rem 4rem 2rem;
 }
 
 .our-mission-title {
@@ -36,7 +65,7 @@
 }
 
 .our-mission-text-container {
-    max-width: 60rem;
+    max-width: 50rem;
 }
 
 .our-mission-text {

@@ -1,0 +1,66 @@
+.testimonial-card {
+    height: 24rem;
+    width: 18rem;
+    display: flex;
+    align-items: end;
+    background-color: #EFD9AF;
+    border-radius: 0.75rem;
+    box-shadow: 0.1rem 0.1rem 0.25rem #b6b6b6;
+}
+
+.inner-testimonial-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 19rem;
+    width: 18rem;
+    background-color: #9B6868;
+    border-radius: 1.25rem 1.25rem 0.75rem 0.75rem;
+    color: white;
+    padding: 1rem;
+}
+
+.testimonial-card-profile-image {
+    height: 3.5rem;
+    width: 3.5rem;
+    border: 3px solid #FCF3E2;
+    border-radius: 100rem;
+    object-fit: contain;
+    align-self: center;
+    margin-top: -2.5rem;
+}
+
+.testimonial-text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-quotation {
+    margin: -1.5rem 0rem;
+    font-family: 'Ephesis', cursive;
+    font-size: 3rem;
+}
+
+.testimonial-review {
+    margin: 0 1rem;
+}
+
+.testimonial-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonial-name {
+    font-family: 'Ephesis', cursive;
+    align-self: center;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.five-stars-image {
+    width: 8rem;
+    align-self: center;
+    margin-top: 0.5rem;
+}

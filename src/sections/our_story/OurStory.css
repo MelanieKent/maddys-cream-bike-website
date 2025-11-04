@@ -4,10 +4,36 @@
     align-items: center;
 }
 
+.where-it-all-began-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .our-story-title {
     font-family: 'Ephesis', cursive;
     font-size: 3rem;
     color: #9B6868;
+}
+
+.where-it-all-began-text-container {
+    padding-bottom: 4rem;
+}
+
+.where-it-all-began-text {
+    width: 30rem;
+    color: #535353;
+}
+
+.where-it-all-began-image-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.where-it-all-began-image {
+    width: 38rem;
+    margin: 0rem -1.5rem;
 }
 
 .our-story-visual-spacer {
@@ -15,6 +41,17 @@
 }
 
 .testimonials-subheader {
-    color: #9B6868;
+    color: #535353;
     margin-top: -2rem;
+}
+
+.testimonials-container {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: 2rem 0 4rem 4rem;
+}
+
+.testimonials-carousel {
+    width: 65rem;
 }

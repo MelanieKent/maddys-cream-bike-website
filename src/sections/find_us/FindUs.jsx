@@ -27,7 +27,10 @@ export const FindUs = () => {
         <div className="find-us-contact-container">
           <p className="find-us-title">Find Us</p>
           <div>
-            <a className="find-us-link" href="mailto:Caroline@MaddysCreamBike.com">
+            <a
+              className="find-us-link"
+              href="mailto:Caroline@MaddysCreamBike.com"
+            >
               <FontAwesomeIcon
                 className=""
                 icon={faEnvelope}
@@ -35,7 +38,11 @@ export const FindUs = () => {
               />
               <p>Caroline@MaddysCreamBike.com</p>
             </a>
-            <a className="find-us-link" href="https://www.instagram.com/maddyscreambike/">
+            <a
+              className="find-us-link"
+              href="https://www.instagram.com/maddyscreambike/"
+              target="_blank"
+            >
               <FontAwesomeIcon
                 className=""
                 icon={faInstagram}
@@ -43,7 +50,11 @@ export const FindUs = () => {
               />
               <p>@MaddysCreamBike</p>
             </a>
-            <a className="find-us-link" href="https://www.facebook.com/people/Maddys-Cream-Bike/61570810093626/">
+            <a
+              className="find-us-link"
+              href="https://www.facebook.com/people/Maddys-Cream-Bike/61570810093626/"
+              target="_blank"
+            >
               <FontAwesomeIcon
                 className=""
                 icon={faFacebookF}

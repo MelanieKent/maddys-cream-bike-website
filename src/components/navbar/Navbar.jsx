@@ -9,6 +9,12 @@ import { SECTIONS } from "../../constants/constants";
 import "./Navbar.css";
 
 export const Navbar = ({ activeSection }) => {
+  const scrollWithOffset = (el) => {
+    const yOffset = -90; // 5.625rem = 90px
+    const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
   return (
     <div className="navbar-container">
       <div className="navbar-inner-container">
@@ -18,33 +24,33 @@ export const Navbar = ({ activeSection }) => {
           alt="Maddy's Cream Bike logo"
         />
         <div className="navbar-links-container">
-          { SECTIONS.map((section) => (
-            // <a
-            //   key={section.id}
-            //   href={`/#${section.id}`}
-            //   className={`navbar-link ${
-            //     activeSection === section.id ? "active" : ""
-            //   }`}
-            // >
+          {SECTIONS.map((section) => (
             <HashLink
-              className={`navbar-link ${
-                activeSection === section.id ? "active" : ""
-              }`}
               key={section.id}
+              className={`navbar-link ${activeSection === section.id ? "active" : ""}`}
               to={`/#${section.id}`}
+              scroll={scrollWithOffset}
             >
-              { section.name }
+              {section.name}
             </HashLink>
           ))}
           <div className="navbar-icons-container">
-            <a href="https://www.facebook.com/people/Maddys-Cream-Bike/61570810093626/">
+            <a
+              href="https://www.facebook.com/people/Maddys-Cream-Bike/61570810093626/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FontAwesomeIcon
                 className="navbar-icon"
                 icon={faFacebookF}
                 size="lg"
               />
             </a>
-            <a href="https://www.instagram.com/maddyscreambike/">
+            <a
+              href="https://www.instagram.com/maddyscreambike/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FontAwesomeIcon
                 className="navbar-icon"
                 icon={faInstagram}
@@ -52,11 +58,15 @@ export const Navbar = ({ activeSection }) => {
               />
             </a>
             <a href="mailto:Caroline@MaddysCreamBike.com">
-              <FontAwesomeIcon className="navbar-icon" icon={faEnvelope} size="lg" />
+              <FontAwesomeIcon
+                className="navbar-icon"
+                icon={faEnvelope}
+                size="lg"
+              />
             </a>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};

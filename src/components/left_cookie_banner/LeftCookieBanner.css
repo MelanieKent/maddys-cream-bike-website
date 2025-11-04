@@ -12,6 +12,8 @@
 
 .sammy-image {
     width: 18rem;
+    height: 18rem;
+    object-fit: scale-down;
     z-index: 100 !important;
 }
 
