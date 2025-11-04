@@ -4,6 +4,12 @@ import { HashLink } from "react-router-hash-link";
 import "./Hero.css";
 
 export const Hero = () => {
+  const scrollWithOffset = (el) => {
+    const yOffset = -90; // 5.625rem = 90px
+    const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
   return (
    <div className="hero-section">
     <div className="hero-image-wrapper">
@@ -14,7 +20,7 @@ export const Hero = () => {
       /> */}
       <video
         className="hero-video"
-        src={`${process.env.PUBLIC_URL}/hero_video_placeholder.MP4`}
+        src={`${process.env.PUBLIC_URL}/hero_video.MP4`}
         autoPlay
         muted
         loop
@@ -27,7 +33,11 @@ export const Hero = () => {
         <HeroBanner />
       </div>
       </div>
-      <HashLink className="book-us-button" to="/#catering">
+      <HashLink
+        className="book-us-button"
+        to="/#catering"
+        scroll={scrollWithOffset}
+      >
         <PrimaryButton boxShadow={true}>Book Us</PrimaryButton>
       </HashLink>
     </div>

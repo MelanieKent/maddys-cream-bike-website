@@ -68,7 +68,7 @@ export const FindUs = () => {
                 icon={faLocationDot}
                 size="lg"
               />
-              <p>Currently remote out of Portland, OR</p>
+              <p>Follow along on Instagram for our <br />latest pop-ups and adventures!</p>
             </a>
           </div>
         </div>

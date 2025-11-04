@@ -100,7 +100,7 @@ export const WhyMaddys = () => {
             <p className="our-mission-title">Our Mission is Simple</p>
             <div className="our-mission-text-container">
               <p className="our-mission-text">
-                Spread joy, one sammie at a time. We create <span style={{ fontWeight: "bold" }}>memorable dessert experiences</span> that bring together, spark conversations, and remind us that even in a seemingly divided world, happiness is best shared.
+                Our mission is simple: to spread joy, one sammie at a time. We <span style={{ fontWeight: "bold" }}>create memorable dessert experiences</span> that bring people together, spark genuine connection, and remind us that even in an increasingly digital world, the sweetest moments are the ones we share.
               </p>
             </div>
           </Grid>

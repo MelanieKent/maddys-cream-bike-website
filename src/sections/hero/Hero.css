@@ -9,9 +9,9 @@
 }
 
 .hero-video {
-  width: 100vw;
-  height: 75vh;
-  object-fit: cover;
+  width: 99.5vw;
+  /* height: 75vh;
+  object-fit: cover; */
   object-position: center;
   display: block;
 }
@@ -19,18 +19,19 @@
 .hero-banner-container {
   position: absolute;
   top: 2.25rem;
-  left: -100%;
+  /* left: -100%; */
+  left: 0%;
   transition: left 0.5s ease;
   z-index: 10;
 }
 
-.hero-image-wrapper:hover .hero-banner-container {
+/* .hero-image-wrapper:hover .hero-banner-container {
   left: 0%;
-}
+} */
 
 .book-us-button {
   position: absolute;
   top: 8rem;
-  left: 89%;
+  right: 2.5rem;
   z-index: 10;
 }

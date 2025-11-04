@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { PrimaryButton, SecondaryButton } from "../../components/button/Button";
 import { LeftCookieBanner } from "../../components/left_cookie_banner/LeftCookieBanner";
 import { RightCookieBanner } from "../../components/right_cookie_banner/RightCookieBanner";
@@ -7,17 +8,43 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  Fade,
+  Snackbar,
+  Slide
  } from '@mui/material';
 import "./MenuAndCatering.css";
 import { NamedInput, NamedTextArea } from "../../components/named_input/NamedInput";
 
 export const MenuAndCatering = () => {
+  const [state, setState] = useState({
+    open: false,
+    transition: Fade,
+  });
+
   const handleMenuDownload = () => {
     const link = document.createElement("a");
     link.href = `${process.env.PUBLIC_URL}/maddys_catering_menu_2025.pdf`;
     link.download = "Maddys_Catering_Menu_2025.pdf";
     link.click();
   }
+
+  const slideTransition = (props) => {
+    return <Slide {...props} direction="left" />;
+  }
+
+  const handleClick = (Transition) => () => {
+    setState({
+      open: true,
+      Transition,
+    });
+  };
+
+  const handleClose = () => {
+    setState({
+      ...state,
+      open: false,
+    });
+  };
 
   return (
     <div className="menu-catering-container">
@@ -74,8 +101,8 @@ export const MenuAndCatering = () => {
         <div className="catering-inquiry-form-container">
           <div className="catering-inquiry-text-container">
             <p className="catering-inquiry-text">
-              * We currently only offer catering services and pre-prepared boxes. 
-              Please fill out the form below if you would like to book Maddy&#39;s for an event!
+              * We currently offer two delightful ways to enjoy Maddy&#39;s — our Full-Service Cream Bike Catering Experience or our convenient Party-Ready Cooler Box drop off for smaller gatherings.
+              Complete the form below to bring our treats to your event!
             </p>
           </div>
           <form className="catering-inquiry-form">
@@ -89,15 +116,31 @@ export const MenuAndCatering = () => {
             <NamedInput title="Event Address" placeholder="E.g. 1234 Freshwater Dr" required={true} />
             <NamedTextArea title="Event Description" placeholder="Please describe the nature of the event" required={true} />
             <div className="submit-button-container">
-              <SecondaryButton>Submit</SecondaryButton>
+              <SecondaryButton onClick={handleClick(slideTransition)}>Submit</SecondaryButton>
             </div>
+              <Snackbar
+                open={state.open}
+                onClose={handleClose}
+                slots={{ transition: state.Transition }}
+                message="Form submission implementation in progress..."
+                autoHideDuration={2000}
+                anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+                ContentProps={{
+                  sx: {
+                    backgroundColor: "#FCF3E2",
+                    color: "#545555",
+                    boxShadow: 3,
+                    border: "none",
+                  },
+                }}
+              />
           </form>
           <div className="catering-inquiry-form-spacer"></div>
         </div>
       </div>
       <img
         className="menu-catering-visual-spacer"
-        src={`${process.env.PUBLIC_URL}/temp_faqs.jpg`}
+        src={`${process.env.PUBLIC_URL}/068.jpg`}
         alt="Placeholder 1"
       />
       <div className="faqs-section">
@@ -142,7 +185,9 @@ export const MenuAndCatering = () => {
               <p className="accordion-title">How many guests can you serve?</p>
             </AccordionSummary>
             <AccordionDetails sx={{ color: "#9B6868" }}>
-              We can comfortably serve anywhere from <span style={{ fontWeight: "bold" }}>75 to 700 guests</span> per event. For larger events, just reach out—we’re happy to discuss custom options.
+              We can comfortably serve anywhere from <span style={{ fontWeight: "bold" }}>30 to 700 guests</span>, depending on your needs.
+              <br /><br />
+              Our <span style={{ fontWeight: "bold" }}>Party-Ready Cooler Box</span> drop off is perfect for smaller gatherings (around 30–60 guests), while our <span style={{ fontWeight: "bold" }}>full-service Cream Bike</span> can easily roll up to serve anywhere from 75 to 700 guests. For larger events, just reach out—we&#39;re happy to create a custom plan for you.
             </AccordionDetails>
           </Accordion>
           <Accordion
@@ -162,7 +207,9 @@ export const MenuAndCatering = () => {
               <p className="accordion-title">Do you have a minimum order?</p>
             </AccordionSummary>
             <AccordionDetails sx={{ color: "#9B6868" }}>
-              Yes, we typically require a <span style={{ fontWeight: "bold" }}>75-guest minimum</span> for catering services. If you have a smaller event, reach out—we might still be able to accommodate.
+              Yes, we typically require a 75-guest minimum for our full-service cream bike catering experience.
+              <br /><br />
+              For smaller gatherings, our Party-Ready Cooler Box is a perfect fit (serves 30–60 guests). It’s a simple drop-off and pick-up service—no setup required, just chill, serve, and enjoy!
             </AccordionDetails>
           </Accordion>
           <Accordion
@@ -203,15 +250,24 @@ export const MenuAndCatering = () => {
               <p className="accordion-title">How much does it cost?</p>
             </AccordionSummary>
             <AccordionDetails sx={{ color: "#9B6868" }}>
-              Our catering pricing is simple and all-inclusive:
-              <ul>
-                <li><span style={{ fontWeight: "bold" }}>Bike Service Fee:</span> $500 This covers our signature bike setup, one friendly server, and up to 2 hours of service.</li>
-                <li><span style={{ fontWeight: "bold" }}>Delivery & Setup:</span> $200 Includes transport, setup, breakdown, and cleanup—so you don’t have to lift a finger.</li>
-                <li><span style={{ fontWeight: "bold" }}>Ice Cream Sammies:</span> Starting at <span style={{ fontWeight: "bold" }}>$7 each</span> Our premium handcrafted sammies are made with Tillamook ice cream and house-baked cookies. We can help you estimate quantities based on your guest count (most people order 1–2 per guest).</li>
-              </ul>
-              For example, a 100-guest event typically comes to around <span style={{ fontWeight: "bold" }}>$1,300–$1,500 total</span>, depending on your menu selections.
+              Our pricing is simple and all-inclusive—designed to make your event effortless and joyful.
               <br /><br />
-              We’re happy to provide a customized quote — just reach out!
+              <span style={{ fontWeight: "bold" }}>Full-Service Cream Bike Catering</span>
+              <ul>
+                <li><span style={{ fontWeight: "bold" }}>Bike Service Fee:</span> $500—includes our signature bike setup, one friendly server, and up to 2 hours of service.</li>
+                <li><span style={{ fontWeight: "bold" }}>Delivery & Setup:</span> $200—covers transport, setup, breakdown, and cleanup, so you don’t have to lift a finger.</li>
+                <li><span style={{ fontWeight: "bold" }}>Ice Cream Sammies:</span> Starting at $7 each—handcrafted with Tillamook ice cream and our house-baked cookies.</li>
+              </ul>
+              <span style={{ fontStyle: "italic" }}>Example: A 100-guest event typically ranges from $1,400–$1,600 total, depending on your menu selections.</span>
+              <br /><br />
+              <span style={{ fontWeight: "bold" }}>Party-Ready Cooler Box (Drop-Off Service)</span>
+              <br />
+              Our Party-Ready Cooler Box is perfect for smaller gatherings (30–60 guests).
+              <ul>
+                <li><span style={{ fontWeight: "bold" }}>Ice Cream Sammies:</span> Starting at $7 each—handcrafted with Tillamook ice cream and our house-baked cookies.</li>
+                <li><span style={{ fontWeight: "bold" }}>Delivery & Packaging:</span> $200–$350—includes drop-off, next-day pick-up, and premium presentation in our branded cooler box.</li>
+              </ul>
+              Everything arrives ready to serve—no setup required, just chill, enjoy, and we&#39;ll handle the rest.
             </AccordionDetails>
           </Accordion>
           <Accordion
@@ -231,13 +287,14 @@ export const MenuAndCatering = () => {
               <p className="accordion-title">What’s included in your catering service?</p>
             </AccordionSummary>
             <AccordionDetails sx={{ color: "#9B6868" }}>
-              Our full-service catering includes:
+              Our <span style={{ fontWeight: "bold" }}>full-service catering</span> includes everything you need for a seamless (and joy-filled) experience:
               <ul>
-                <li>Our signature ice cream bike setup</li>
-                <li>A menu of handcrafted ice cream sandwiches</li>
-                <li>A friendly attendant to serve your guests</li>
-                <li>Setup and cleanup—no effort required on your part!</li>
+                <li>Our signature <span style={{ fontWeight: "bold" }}>Cream Bike</span> setup—charming and photo-ready</li>
+                <li>A curated menu of <span style={{ fontWeight: "bold" }}>handcrafted ice cream sammies</span></li>
+                <li>A friendly <span style={{ fontWeight: "bold" }}>attendant</span> to serve your guests with a smile</li>
+                <li><span style={{ fontWeight: "bold" }}>Setup and cleanup</span>—you won&#39;t have to lift a finger!</li>
               </ul>
+              For smaller gatherings, our <span style={{ fontWeight: "bold" }}>Party-Ready Cooler Box</span> offers the same handcrafted sammies, beautifully packaged and ready to enjoy with simple <span style={{ fontWeight: "bold" }}>drop-off and pick-up service</span>.
             </AccordionDetails>
           </Accordion>
           <p className="faq-subtitle">Flavors & Dietary Needs</p>
@@ -258,9 +315,9 @@ export const MenuAndCatering = () => {
               <p className="accordion-title">What flavors do you offer?</p>
             </AccordionSummary>
             <AccordionDetails sx={{ color: "#9B6868" }}>
-              You can find our current lineup of handcrafted ice cream sammies in the <span style={{ fontWeight: "bold" }}>Catering Menu</span> section of our website. We typically offer up to <span style={{ fontWeight: "bold" }}>2 or 4 flavors per event</span>, featuring Tillamook ice cream and our house-baked cookies.
+              You can find our current lineup of handcrafted ice cream sammies in the Catering Menu section of our website. We typically offer up to 2 or 4 flavors per event, featuring our homemade specialty cookies paired with premium Tilimook ice cream.
               <br /><br />
-              We also occasionally roll out limited-edition seasonal flavors—follow us on Instagram to see what’s new and delicious!
+              We also occasionally roll out <span style={{ fontWeight: "bold" }}>limited-edition seasonal flavors</span>—follow us on Instagram to see what&#39;s new and delicious!
             </AccordionDetails>
           </Accordion>
           <Accordion
@@ -360,7 +417,7 @@ export const MenuAndCatering = () => {
       <div className="menu-catering-spacer"></div>
       <img
         className="menu-catering-visual-spacer"
-        src={`${process.env.PUBLIC_URL}/temp_why_maddys.jpg`}
+        src={`${process.env.PUBLIC_URL}/035.jpg`}
         alt="Placeholder 2"
       />
     </div>

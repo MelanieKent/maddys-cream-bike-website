@@ -4,10 +4,15 @@
     align-items: center;
 }
 
-.where-it-all-began-container {
+.where-it-all-began-container, .about-us-container {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.about-us-container {
+    margin-top: -4rem;
+    text-align: end;
 }
 
 .our-story-title {
@@ -16,12 +21,18 @@
     color: #9B6868;
 }
 
-.where-it-all-began-text-container {
+
+.where-it-all-began-text-container, .about-us-text-container {
     padding-bottom: 4rem;
 }
 
 .where-it-all-began-text {
-    width: 30rem;
+    width: 40rem;
+    color: #535353;
+}
+
+.about-us-text {
+    width: 38rem;
     color: #535353;
 }
 
@@ -31,9 +42,20 @@
     align-items: center;
 }
 
+.about-us-image-container {
+    height: 100%;
+    display: flex;
+    align-items: start;
+    margin-top: 4.5rem;
+}
+
 .where-it-all-began-image {
-    width: 38rem;
-    margin: 0rem -1.5rem;
+    height: 22rem;
+    margin-right: -4rem;
+}
+
+.about-us-image {
+    height: 22rem;
 }
 
 .our-story-visual-spacer {
