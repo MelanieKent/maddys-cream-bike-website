@@ -1,0 +1,35 @@
+.mobile-cookie-banner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.mobile-sammy-image {
+    width: 12rem;
+    margin-bottom: -4rem;
+    z-index: 100;
+}
+
+.mobile-cookie-banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100vw;
+    background-color: #F4E4C6;
+    padding: 1rem 0;
+}
+
+.mobile-cookie-banner-title {
+    font-size: 2.5rem;
+    font-family: 'Ephesis', cursive;
+    color: #9B6868;
+    margin-bottom: -0.5rem;
+    padding-top: 1rem;
+}
+
+.mobile-cookie-banner-description {
+    color: #545555;
+    margin: 1rem;
+}

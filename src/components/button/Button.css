@@ -1,13 +1,21 @@
-.primary-button {
+.primary-button, .primary-button-small {
     color: white;
     background-color: #9B6868;
     border: none;
-    font-size: 1.25rem;
-    padding: 0.7rem 1.5rem;
     border-radius: 0.5rem;
     font-family: inherit;
     cursor: pointer;
     z-index: 10;
+}
+
+.primary-button {
+    font-size: 1.25rem;
+    padding: 0.7rem 1.5rem;
+}
+
+.primary-button-small {
+    font-size: 1rem;
+    padding: 0.7rem 1.5rem;
 }
 
 .primary-button:hover {

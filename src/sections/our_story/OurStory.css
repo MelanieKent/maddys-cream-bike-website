@@ -12,41 +12,61 @@
 
 .about-us-container {
     margin-top: -4rem;
-    text-align: end;
 }
 
-.our-story-title {
+.our-story-title, .mobile-our-story-title {
     font-family: 'Ephesis', cursive;
     font-size: 3rem;
     color: #9B6868;
 }
 
+.mobile-our-story-title {
+    text-align: center;
+}
 
 .where-it-all-began-text-container, .about-us-text-container {
     padding-bottom: 4rem;
 }
 
+.mobile-where-it-all-began-text-container, .mobile-about-us-text-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .where-it-all-began-text {
-    width: 40rem;
+    width: 38rem;
     color: #535353;
+    font-size: large;
+}
+
+.mobile-where-it-all-began-text, .mobile-about-us-text {
+    text-align: center;
+    color: #535353;
+    max-width: 48rem;
+    margin: 0 2rem;
 }
 
 .about-us-text {
     width: 38rem;
     color: #535353;
+    font-size: large;
 }
 
-.where-it-all-began-image-container {
+.where-it-all-began-image-container, .mobile-about-us-image-container {
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .about-us-image-container {
     height: 100%;
     display: flex;
     align-items: start;
-    margin-top: 4.5rem;
+    margin-top: 2rem;
+    margin-right: 1rem;
 }
 
 .where-it-all-began-image {
@@ -54,7 +74,14 @@
     margin-right: -4rem;
 }
 
+.mobile-where-it-all-began-image, .mobile-about-us-image {
+    height: 18rem;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+}
+
 .about-us-image {
+    margin-top: 1rem;
     height: 22rem;
 }
 
@@ -65,6 +92,7 @@
 .testimonials-subheader {
     color: #535353;
     margin-top: -2rem;
+    font-size: large;
 }
 
 .testimonials-container {
@@ -77,3 +105,13 @@
 .testimonials-carousel {
     width: 65rem;
 }
+
+@media only screen and (max-width: 1100px) {
+    .testimonials-carousel {
+        width: 20rem;
+    }
+    .testimonials-container {
+        margin: 2rem 0 4rem 2rem;
+    }
+}
+

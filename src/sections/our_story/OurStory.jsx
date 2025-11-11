@@ -1,22 +1,27 @@
 import { TestimonialCard } from "../../components/testimonial_card/TestimonialCard.jsx";
-import { Grid } from "@mui/material";
+import {
+  Grid,
+  useMediaQuery
+} from "@mui/material";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./OurStory.css";
 
 export const OurStory = () => {
+  const smallScreen = useMediaQuery('(max-width:1200px)');
+
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 1650 },
       items: 3
     },
     desktop: {
-      breakpoint: { max: 1650, min: 1325 },
+      breakpoint: { max: 1650, min: 1100 },
       items: 3
     },
     tablet: {
-      breakpoint: { max: 1325, min: 464 },
-      items: 3
+      breakpoint: { max: 1100, min: 464 },
+      items: 1
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
@@ -55,10 +60,10 @@ export const OurStory = () => {
     <div className="our-story-container">
       <div className="where-it-all-began-container">
         <Grid container spacing={2}>
-          <Grid size={8}>
-            <p className="our-story-title">Where It All Began</p>
-            <div className="where-it-all-began-text-container">
-              <p className="where-it-all-began-text">
+          <Grid size={{ xs: 12, lg: 8 }}>
+            <p className={ smallScreen ? "mobile-our-story-title" : "our-story-title" }>Where It All Began</p>
+            <div className={ smallScreen ? "mobile-where-it-all-began-text-container" : "where-it-all-began-text-container" }>
+              <p className={ smallScreen ? "mobile-where-it-all-began-text" : "where-it-all-began-text" }>
                 Hello, my name is Caroline. Maddy&#39;s Cream Bike was inspired by my daughter, Maddy—the joy behind everything I do. When she was just a baby, I wanted to build something that captured the same sense of wonder, warmth, and connection that she brought into our lives.
                 <br /><br />
                 The idea started simple: to <span style={{ fontWeight: "bold" }}>spread a little happiness, one sammie at a time.</span> We named it Maddy’s because it reflects the spirit of childhood joy—that feeling you get when the ice cream truck rolls by or when you share a treat with someone you love.
@@ -67,10 +72,10 @@ export const OurStory = () => {
               </p>
             </div>
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ xs: 12, lg: 4 }}>
             <div className="where-it-all-began-image-container">
               <img
-                className="where-it-all-began-image"
+                className={ smallScreen ? "mobile-where-it-all-began-image" : "where-it-all-began-image"}
                 src={`${process.env.PUBLIC_URL}/where_it_all_began_polaroid.png`}
                 alt=""
               />
@@ -80,29 +85,40 @@ export const OurStory = () => {
       </div>
       <div className="about-us-container">
         <Grid container spacing={2}>
-          <Grid size={5}>
-            <div className="about-us-image-container">
-              <img
-                className="about-us-image"
-                src={`${process.env.PUBLIC_URL}/about_us_polaroids.png`}
-                alt=""
-              />
-            </div>
-          </Grid>
-          <Grid size={7}>
-            <p className="our-story-title about-us-title">About Us</p>
-            <div className="about-us-text-container">
-              <p className="about-us-text">
+          { !smallScreen &&
+            <Grid size={{ xs: 12, lg: 5 }}>
+              <div className="about-us-image-container">
+                <img
+                  className="about-us-image"
+                  src={`${process.env.PUBLIC_URL}/about_us_polaroids.png`}
+                  alt=""
+                />
+              </div>
+            </Grid>
+          }
+          <Grid size={{ xs: 12, lg: 7 }}>
+            <p className={ smallScreen ? "mobile-our-story-title" : "our-story-title" }>About Us</p>
+            <div className={ smallScreen ? "mobile-about-us-text-container" : "about-us-text-container" }>
+              <p className={ smallScreen ? "mobile-about-us-text" : "about-us-text" }>
                 We’re Maddy’s Cream Bike, a Portland-based handcrafted ice cream sandwich venture born from a love of slowing down, connecting, and sharing joy through simple, nostalgic desserts. Founded by a tech start up executive turned ice cream dreamers, we set out to reimagine the classic ice cream sandwich—small-batch cookies baked from scratch, paired with premium ice cream, served from a beautifully vintage-style freezer bike.
                 <br /><br />
-                Our setup is as unique as our story—fully self-contained, no power or prep required, and designed to bring a smile anywhere we roll in. From corporate events, brand activations and weddings to neighborhood block parties, guests love the charm, the look, and of course, the taste of our deliciously handcrafted ice cream sammies.
+                Our setup is as unique as our story—fully self-contained, no power or prep required, and designed to bring a smile anywhere we roll in. From corporate events, brand activations and weddings to neighborhood block parties, guests love the charm, look, and taste of our deliciously handcrafted ice cream sammies.
                 <br /><br />
                 Since launching in early 2025, we’ve quickly built a loyal following and have been invited to cater community festivals, company events, and local celebrations. The response is incredible—people call it <span style={{ fontWeight: "bold" }}>“the perfect Portland treat”</span> and <span style={{ fontWeight: "bold" }}>“the dessert everyone talks about.”</span>
-                <br /><br />
-                At Maddy’s, our mission is simple: to create shared memories and connections—when we share something sweet, we share something human. 
               </p>
             </div>
           </Grid>
+          { smallScreen &&
+            <Grid size={{ xs: 12, lg: 5 }}>
+              <div className="mobile-about-us-image-container">
+                <img
+                  className="mobile-about-us-image"
+                  src={`${process.env.PUBLIC_URL}/about_us_polaroids.png`}
+                  alt=""
+                />
+              </div>
+            </Grid>
+          }
         </Grid>
       </div>
       <img className="our-story-visual-spacer" src={`${process.env.PUBLIC_URL}/098.jpg`} alt="Placeholder 1" />

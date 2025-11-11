@@ -1,16 +1,25 @@
+import { useState } from 'react';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import { TextField } from '@mui/material';
+import dayjs from 'dayjs';
 import "./NamedInput.css";
 
 export const NamedInput = ({
   id,
   title = "",
   type = "text",
+  name = "",
   required = false,
   placeholder = ""
 }) => {
+  const [value, setValue] = useState(null);
+
+  const handleChange = (newValue) => {
+    setValue(newValue);
+  }
+
   return (
     <div className="named-input-container">
       <p className="named-text">{title} {required ? "*" : ""}</p>
@@ -18,6 +27,8 @@ export const NamedInput = ({
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <DateTimePicker
             label={placeholder}
+            value={value}
+            onChange={handleChange}
             sx={{
               width: "100%",
               '& .MuiSvgIcon-root': {
@@ -41,11 +52,17 @@ export const NamedInput = ({
               },
             }}
           />
+          <input
+            type="hidden"
+            name={name}
+            value={value ? dayjs(value).format("dddd, MMMM D, YYYY [at] h:mm A") : ""}
+          />
         </LocalizationProvider> :
         <input
           id={id}
           className="named-input"
           type={type}
+          name={name}
           placeholder={placeholder}
           required={required}
         />
@@ -58,6 +75,7 @@ export const NamedTextArea = ({
   id,
   title = "",
   type = "text",
+  name = "",
   required = false,
   placeholder = ""
 }) => {
@@ -68,6 +86,7 @@ export const NamedTextArea = ({
         id={id}
         className="named-textarea"
         type={type}
+        name={name}
         placeholder={placeholder}
         required={required}
         rows={4}

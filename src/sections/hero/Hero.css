@@ -2,18 +2,23 @@
     
 }
 
-.hero-image-wrapper {
+.hero-video-wrapper {
   position: relative;
   overflow: hidden;
   width: 100vw;
 }
 
 .hero-video {
-  width: 99.5vw;
-  /* height: 75vh;
-  object-fit: cover; */
+  width: 100vw;
+  height: 80vh;
+  object-fit: cover;
   object-position: center;
   display: block;
+}
+
+.hero-banner-button-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .hero-banner-container {
@@ -31,7 +36,14 @@
 
 .book-us-button {
   position: absolute;
-  top: 8rem;
+  top: 2.25rem;
   right: 2.5rem;
   z-index: 10;
+}
+
+@media only screen and (max-width: 560px) {
+  .book-us-button {
+    top: 8.25rem;
+    right: 1.5rem;
+  }
 }

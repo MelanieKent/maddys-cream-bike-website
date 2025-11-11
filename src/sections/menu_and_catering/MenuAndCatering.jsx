@@ -1,25 +1,30 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { PrimaryButton, SecondaryButton } from "../../components/button/Button";
 import { LeftCookieBanner } from "../../components/left_cookie_banner/LeftCookieBanner";
 import { RightCookieBanner } from "../../components/right_cookie_banner/RightCookieBanner";
+import { MobileCookieBanner } from "../../components/mobile_cookie_banner/MobileCookieBanner";
 import DownloadIcon from '@mui/icons-material/Download';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {
+  useMediaQuery,
   Accordion,
   AccordionSummary,
   AccordionDetails,
-  Fade,
   Snackbar,
   Slide
  } from '@mui/material';
 import "./MenuAndCatering.css";
 import { NamedInput, NamedTextArea } from "../../components/named_input/NamedInput";
+import emailjs from "@emailjs/browser";
 
 export const MenuAndCatering = () => {
-  const [state, setState] = useState({
-    open: false,
-    transition: Fade,
-  });
+  const [toastOpen, setToastOpen] = useState(false);
+  const [toastMessage, setToastMessage] = useState("Your catering inquiry was successfully submitted!"); 
+
+  const smallScreen = useMediaQuery('(max-width:600px)');
+  const mediumScreen = useMediaQuery('(max-width:1000px)');
+
+  const form = useRef();
 
   const handleMenuDownload = () => {
     const link = document.createElement("a");
@@ -28,33 +33,44 @@ export const MenuAndCatering = () => {
     link.click();
   }
 
-  const slideTransition = (props) => {
-    return <Slide {...props} direction="left" />;
-  }
-
-  const handleClick = (Transition) => () => {
-    setState({
-      open: true,
-      Transition,
-    });
-  };
-
   const handleClose = () => {
-    setState({
-      ...state,
-      open: false,
-    });
+    setToastOpen(false);
   };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "maddys_cream_bike",
+        "template_4qz3jek",
+        form.current,
+        "ul55ClBHSXMXf3RTq"
+      )
+      .then(
+        (response) => {
+          setToastOpen(true);
+          console.log(response);
+        },
+        (error) => {
+          setToastMessage("There was an error submitting your catering inquiry");
+          setToastOpen(true);
+          console.log(error);
+        }
+      );
+  }
 
   return (
     <div className="menu-catering-container">
       <div className="menu-catering-top-container">
         <p className="menu-catering-title">Menu and Catering</p>
-        <img
-          className="bike-illustration-image"
-          src={`${process.env.PUBLIC_URL}/maddys_bike_illustration.png`}
-          alt="Maddy's Bike Illustration"
-        />
+        {!smallScreen &&
+          <img
+            className="bike-illustration-image"
+            src={`${process.env.PUBLIC_URL}/maddys_bike_illustration.png`}
+            alt="Maddy's Bike Illustration"
+          />
+        }
       </div>
       <PrimaryButton onClick={handleMenuDownload}>
         <div className="download-menu-button">
@@ -63,30 +79,62 @@ export const MenuAndCatering = () => {
         </div>
       </PrimaryButton>
       <div className="menu-catering-spacer"></div>
-      <LeftCookieBanner
-        img_src={`${process.env.PUBLIC_URL}/060_classic.png`}
-        img_alt="Placeholder cookie 1"
-        title="Sweet Chip Classic"
-        description="A timeless pairing of Mini Chocolate Chip cookies wrapped around a scoop of dreamy Vanilla Bean ice cream. It’s nostalgic, playful, and just sweet enough to steal your heart. A gentle nod to first loves and forever favorites."
-      />
-      <RightCookieBanner
-        img_src={`${process.env.PUBLIC_URL}/064_lemon.png`}
-        img_alt="Placeholder cookie 2"
-        title="Lemonberry Bliss"
-        description="A lively duet of tart and sweet — brings together golden Lemon cookies and lush Oregon Strawberry ice cream for a flavor that's as cheerful as it is delicious."
-      />
-      <LeftCookieBanner
-        img_src={`${process.env.PUBLIC_URL}/065_choco.png`}
-        img_alt="Placeholder cookie 3"
-        title="Coco Mint Lover"
-        description="Rich Double Chocolate cookies with a kiss of Sea Salt embrace cool Mint Chocolate Chip ice cream for a refreshingly bold affair. With just the right touch of sweetness, it’s a love story for the true chocolate devotee."
-      />
-      <RightCookieBanner
-        img_src={`${process.env.PUBLIC_URL}/067_ube.png`}
-        img_alt="Placeholder cookie 4"
-        title="Sweet Ube Kiss"
-        description="Brings together pillowy Ube Marbled cookies and creamy Vanilla Bean ice cream, creating a tender moment you’ll want to savor."
-      />
+      { !mediumScreen &&
+        <div>
+          <LeftCookieBanner
+            img_src={`${process.env.PUBLIC_URL}/060_classic.png`}
+            img_alt="Placeholder cookie 1"
+            title="Sweet Chip Classic"
+            description="A timeless pairing of Mini Chocolate Chip cookies wrapped around a scoop of dreamy Vanilla Bean ice cream. It’s nostalgic, playful, and just sweet enough to steal your heart. A gentle nod to first loves and forever favorites."
+          />
+          <RightCookieBanner
+            img_src={`${process.env.PUBLIC_URL}/064_lemon.png`}
+            img_alt="Placeholder cookie 2"
+            title="Lemonberry Bliss"
+            description="A lively duet of tart and sweet — brings together golden Lemon cookies and lush Oregon Strawberry ice cream for a flavor that's as cheerful as it is delicious."
+          />
+          <LeftCookieBanner
+            img_src={`${process.env.PUBLIC_URL}/065_choco.png`}
+            img_alt="Placeholder cookie 3"
+            title="Coco Mint Lover"
+            description="Rich Double Chocolate cookies with a kiss of Sea Salt embrace cool Mint Chocolate Chip ice cream for a refreshingly bold affair. With just the right touch of sweetness, it’s a love story for the true chocolate devotee."
+          />
+          <RightCookieBanner
+            img_src={`${process.env.PUBLIC_URL}/067_ube.png`}
+            img_alt="Placeholder cookie 4"
+            title="Sweet Ube Kiss"
+            description="Brings together pillowy Ube Marbled cookies and creamy Vanilla Bean ice cream, creating a tender moment you’ll want to savor."
+          />
+        </div>
+      }
+      { mediumScreen &&
+        <div>
+          <MobileCookieBanner
+            img_src={`${process.env.PUBLIC_URL}/060_classic.png`}
+            img_alt="Placeholder cookie 1"
+            title="Sweet Chip Classic"
+            description="A timeless pairing of Mini Chocolate Chip cookies wrapped around a scoop of dreamy Vanilla Bean ice cream. It’s nostalgic, playful, and just sweet enough to steal your heart. A gentle nod to first loves and forever favorites."
+          />
+          <MobileCookieBanner
+            img_src={`${process.env.PUBLIC_URL}/064_lemon.png`}
+            img_alt="Placeholder cookie 2"
+            title="Lemonberry Bliss"
+            description="A lively duet of tart and sweet — brings together golden Lemon cookies and lush Oregon Strawberry ice cream for a flavor that's as cheerful as it is delicious."
+          />
+          <MobileCookieBanner
+            img_src={`${process.env.PUBLIC_URL}/065_choco.png`}
+            img_alt="Placeholder cookie 3"
+            title="Coco Mint Lover"
+            description="Rich Double Chocolate cookies with a kiss of Sea Salt embrace cool Mint Chocolate Chip ice cream for a refreshingly bold affair. With just the right touch of sweetness, it’s a love story for the true chocolate devotee."
+          />
+          <MobileCookieBanner
+            img_src={`${process.env.PUBLIC_URL}/067_ube.png`}
+            img_alt="Placeholder cookie 4"
+            title="Sweet Ube Kiss"
+            description="Brings together pillowy Ube Marbled cookies and creamy Vanilla Bean ice cream, creating a tender moment you’ll want to savor."
+          />
+        </div>
+      }
       <div>
         <img
           className="more-coming-soon-banner"
@@ -105,25 +153,63 @@ export const MenuAndCatering = () => {
               Complete the form below to bring our treats to your event!
             </p>
           </div>
-          <form className="catering-inquiry-form">
+          <form className="catering-inquiry-form" ref={form} onSubmit={sendEmail}>
             {/* TODO */}
-            <NamedInput title="Full Name" placeholder="E.g. John Smith" required={true} />
-            <NamedInput title="Business Name (if applicable)" placeholder="E.g. Some Company" />
-            <NamedInput title="Email" placeholder="E.g. example@gmail.com" required={true} />
-            <NamedInput title="Phone Number" placeholder="E.g. 123-456-7890" required={true} />
-            {/* TODO: turn this into date / time dropdown */}
-            <NamedInput title="Event Date and Time" type="date" placeholder="E.g. 01/01/2025 5:00 PM" required={true} />
-            <NamedInput title="Event Address" placeholder="E.g. 1234 Freshwater Dr" required={true} />
-            <NamedTextArea title="Event Description" placeholder="Please describe the nature of the event" required={true} />
+            <NamedInput
+              title="Full Name"
+              name="full_name"
+              placeholder="E.g. John Smith"
+              required={true}
+            />
+            <NamedInput
+              title="Business Name (if applicable)"
+              name="business_name"
+              placeholder="E.g. Some Company"
+            />
+            <NamedInput
+              title="Email"
+              name="email"
+              placeholder="E.g. example@gmail.com"
+              required={true}
+            />
+            <NamedInput
+              title="Phone Number"
+              name="phone_number"
+              placeholder="E.g. 123-456-7890"
+              required={true}
+            />
+            <NamedInput
+              title="Event Date and Time"
+              name="event_date_time"
+              type="date"
+              placeholder="E.g. 01/01/2025 5:00 PM"
+              required={true}
+            />
+            <NamedInput
+              title="Event Address"
+              name="event_address"
+              placeholder="E.g. 1234 Freshwater Dr"
+              required={true}
+            />
+            <NamedTextArea
+              title="Event Description"
+              name="event_description"
+              placeholder="Please describe the nature of the event"
+              required={true}
+            />
             <div className="submit-button-container">
-              <SecondaryButton onClick={handleClick(slideTransition)}>Submit</SecondaryButton>
+              <SecondaryButton
+                type="submit"
+              >
+                Submit
+              </SecondaryButton>
             </div>
               <Snackbar
-                open={state.open}
+                open={toastOpen}
                 onClose={handleClose}
-                slots={{ transition: state.Transition }}
-                message="Form submission implementation in progress..."
-                autoHideDuration={2000}
+                TransitionComponent={(props) => <Slide {...props} direction="left" />}
+                message={toastMessage}
+                autoHideDuration={3000}
                 anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
                 ContentProps={{
                   sx: {
@@ -154,7 +240,7 @@ export const MenuAndCatering = () => {
               boxShadow: "none",
               border: "1px solid #9B6868",
               marginBottom: "1rem",
-              width: "60rem"
+              maxWidth: "60rem"
             }}
           >
             <AccordionSummary
@@ -174,7 +260,7 @@ export const MenuAndCatering = () => {
               boxShadow: "none",
               border: "1px solid #9B6868",
               marginBottom: "1rem",
-              width: "60rem"
+              maxWidth: "60rem"
             }}
           >
             <AccordionSummary
@@ -185,9 +271,9 @@ export const MenuAndCatering = () => {
               <p className="accordion-title">How many guests can you serve?</p>
             </AccordionSummary>
             <AccordionDetails sx={{ color: "#9B6868" }}>
-              We can comfortably serve anywhere from <span style={{ fontWeight: "bold" }}>30 to 700 guests</span>, depending on your needs.
+              We can comfortably serve anywhere from <span style={{ fontWeight: "bold" }}>30 to 1,000 guests</span>, depending on your needs.
               <br /><br />
-              Our <span style={{ fontWeight: "bold" }}>Party-Ready Cooler Box</span> drop off is perfect for smaller gatherings (around 30–60 guests), while our <span style={{ fontWeight: "bold" }}>full-service Cream Bike</span> can easily roll up to serve anywhere from 75 to 700 guests. For larger events, just reach out—we&#39;re happy to create a custom plan for you.
+              Our <span style={{ fontWeight: "bold" }}>Party-Ready Cooler Box</span> drop off is perfect for smaller gatherings (around 30–90 guests), while our <span style={{ fontWeight: "bold" }}>full-service Cream Bike</span> can easily roll up to serve anywhere from 75 to 1,000 guests. For larger events, just reach out—we&#39;re happy to create a custom plan for you.
             </AccordionDetails>
           </Accordion>
           <Accordion
@@ -196,7 +282,7 @@ export const MenuAndCatering = () => {
               boxShadow: "none",
               border: "1px solid #9B6868",
               marginBottom: "1rem",
-              width: "60rem"
+              maxWidth: "60rem"
             }}
           >
             <AccordionSummary
@@ -209,7 +295,7 @@ export const MenuAndCatering = () => {
             <AccordionDetails sx={{ color: "#9B6868" }}>
               Yes, we typically require a 75-guest minimum for our full-service cream bike catering experience.
               <br /><br />
-              For smaller gatherings, our Party-Ready Cooler Box is a perfect fit (serves 30–60 guests). It’s a simple drop-off and pick-up service—no setup required, just chill, serve, and enjoy!
+              For smaller gatherings, our Party-Ready Cooler Box is a perfect fit (serves 30–90 guests). It’s a simple drop-off and pick-up service—no setup required, just chill, serve, and enjoy!
             </AccordionDetails>
           </Accordion>
           <Accordion
@@ -218,7 +304,7 @@ export const MenuAndCatering = () => {
               boxShadow: "none",
               border: "1px solid #9B6868",
               marginBottom: "1rem",
-              width: "60rem"
+              maxWidth: "60rem"
             }}
           >
             <AccordionSummary
@@ -239,7 +325,7 @@ export const MenuAndCatering = () => {
               boxShadow: "none",
               border: "1px solid #9B6868",
               marginBottom: "1rem",
-              width: "60rem"
+              maxWidth: "60rem"
             }}
           >
             <AccordionSummary
@@ -258,14 +344,14 @@ export const MenuAndCatering = () => {
                 <li><span style={{ fontWeight: "bold" }}>Delivery & Setup:</span> $200—covers transport, setup, breakdown, and cleanup, so you don’t have to lift a finger.</li>
                 <li><span style={{ fontWeight: "bold" }}>Ice Cream Sammies:</span> Starting at $7 each—handcrafted with Tillamook ice cream and our house-baked cookies.</li>
               </ul>
-              <span style={{ fontStyle: "italic" }}>Example: A 100-guest event typically ranges from $1,400–$1,600 total, depending on your menu selections.</span>
+              <span style={{ fontStyle: "italic" }}>Example: A 100-guest event typically ranges from $1,400–$1,700 total, depending on your menu selections.</span>
               <br /><br />
               <span style={{ fontWeight: "bold" }}>Party-Ready Cooler Box (Drop-Off Service)</span>
               <br />
-              Our Party-Ready Cooler Box is perfect for smaller gatherings (30–60 guests).
+              Our Party-Ready Cooler Box is perfect for smaller gatherings (30–90 guests).
               <ul>
                 <li><span style={{ fontWeight: "bold" }}>Ice Cream Sammies:</span> Starting at $7 each—handcrafted with Tillamook ice cream and our house-baked cookies.</li>
-                <li><span style={{ fontWeight: "bold" }}>Delivery & Packaging:</span> $200–$350—includes drop-off, next-day pick-up, and premium presentation in our branded cooler box.</li>
+                <li><span style={{ fontWeight: "bold" }}>Delivery & Packaging:</span> $200–$300—includes drop-off, next-day pick-up, and premium presentation in our branded cooler box.</li>
               </ul>
               Everything arrives ready to serve—no setup required, just chill, enjoy, and we&#39;ll handle the rest.
             </AccordionDetails>
@@ -276,7 +362,7 @@ export const MenuAndCatering = () => {
               boxShadow: "none",
               border: "1px solid #9B6868",
               marginBottom: "1rem",
-              width: "60rem"
+              maxWidth: "60rem"
             }}
           >
             <AccordionSummary
@@ -304,7 +390,7 @@ export const MenuAndCatering = () => {
               boxShadow: "none",
               border: "1px solid #9B6868",
               marginBottom: "1rem",
-              width: "60rem"
+              maxWidth: "60rem"
             }}
           >
             <AccordionSummary
@@ -326,7 +412,7 @@ export const MenuAndCatering = () => {
               boxShadow: "none",
               border: "1px solid #9B6868",
               marginBottom: "1rem",
-              width: "60rem"
+              maxWidth: "60rem"
             }}
           >
             <AccordionSummary
@@ -349,7 +435,7 @@ export const MenuAndCatering = () => {
               boxShadow: "none",
               border: "1px solid #9B6868",
               marginBottom: "1rem",
-              width: "60rem"
+              maxWidth: "60rem"
             }}
           >
             <AccordionSummary
@@ -360,7 +446,7 @@ export const MenuAndCatering = () => {
               <p className="accordion-title">Do you need power or special setup?</p>
             </AccordionSummary>
             <AccordionDetails sx={{ color: "#9B6868" }}>
-              Nope! Our ice cream bike is completely self-contained and doesn't require power. We just need a flat area for setup—about 6x8 feet of space.
+              Nope! We can accommodate both indoor and outdoor events. Our ice cream bike is fully self-contained—no power needed! We just need a flat 6x8 ft space for setup and an ADA-accessible path so we can easily roll the bike to your event area.
             </AccordionDetails>
           </Accordion>
           <Accordion
@@ -369,7 +455,7 @@ export const MenuAndCatering = () => {
               boxShadow: "none",
               border: "1px solid #9B6868",
               marginBottom: "1rem",
-              width: "60rem"
+              maxWidth: "60rem"
             }}
           >
             <AccordionSummary
@@ -393,7 +479,7 @@ export const MenuAndCatering = () => {
               boxShadow: "none",
               border: "1px solid #9B6868",
               marginBottom: "1rem",
-              width: "60rem"
+              maxWidth: "60rem"
             }}
           >
             <AccordionSummary

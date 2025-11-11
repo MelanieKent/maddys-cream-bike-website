@@ -13,7 +13,7 @@ export const FindUs = () => {
     "img_3617.png",
     "img_3647.png",
     "img_3835.png",
-    "img_3936.png",
+    // "img_3936.png",
     "img_4055.png",
     "img_4067.png",
     "img_4261.png",

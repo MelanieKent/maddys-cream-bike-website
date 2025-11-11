@@ -14,7 +14,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem;
+}
+
+.mobile-why-maddys-item-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .why-maddys-item-icon {
@@ -31,12 +37,14 @@
     color: #9B6868;
     text-align: center;
     font-weight: bold;
+    font-size: large;
 }
 
 .why-maddys-item-description {
     color: #535353;
     text-align: center;
     margin-top: 0;
+    font-size: large;
 }
 
 .our-mission-container {
@@ -53,21 +61,42 @@
     align-items: center;
 }
 
+.mobile-our-mission-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .our-mission-image {
     width: 14rem;
     margin: 3rem 2rem 4rem 2rem;
 }
 
-.our-mission-title {
+.mobile-our-mission-image {
+    width: 14rem;
+    margin-bottom: 4rem;
+}
+
+.our-mission-title, .mobile-our-mission-title {
     font-family: 'Ephesis', cursive;
     font-size: 3rem;
     color: #E5CC99;  
+}
+
+.mobile-our-mission-title {
+    text-align: center;
 }
 
 .our-mission-text-container {
     max-width: 50rem;
 }
 
+.mobile-our-mission-text-container {
+    text-align: center;
+    margin: 0 2rem;
+}
+
 .our-mission-text {
     color: #F1E7D2;
+    font-size: large;
 }

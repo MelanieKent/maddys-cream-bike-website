@@ -12,7 +12,7 @@ export const LeftCookieBanner = ({
       <div className="left-cookie-banner-content">
         <img className="sammy-image" src={img_src} alt={img_alt} />
         <div>
-          <p className="cookie-banner-title">{title}</p>
+          <p className="left-cookie-banner-title">{title}</p>
           <p className="cookie-banner-description">{description}</p>
         </div>
       </div>

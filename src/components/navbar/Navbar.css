@@ -43,16 +43,36 @@
     border-bottom: solid #9B6868 0.1rem;
 }
 
+.mobile-navbar-link {
+    margin: 0.75rem 0;
+}
+
 .navbar-icons-container {
     display: flex;
     gap: 0.5rem;
 }
 
-.navbar-icon {
+.navbar-icon, .navbar-hamburger-menu {
     color: #545555;
     cursor: pointer;
 }
 
+.navbar-hamburger-menu {
+    margin-left: 1.25rem;
+}
+
+.drawer-container {
+    /* height: 100vh; */
+    padding: 1rem;
+    background-color: inherit;
+}
+
 .navbar-icon:hover {
     color: #9B6868;
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar-container {
+    padding: 0rem 1.5rem;
+  }
 }
