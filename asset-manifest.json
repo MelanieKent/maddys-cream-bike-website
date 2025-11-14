@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/maddys-cream-bike-website/static/css/main.becd208b.css",
-    "main.js": "/maddys-cream-bike-website/static/js/main.cb539800.js",
-    "static/js/453.670e15c7.chunk.js": "/maddys-cream-bike-website/static/js/453.670e15c7.chunk.js",
-    "static/media/transparent_background_logo.png": "/maddys-cream-bike-website/static/media/transparent_background_logo.6100dfc1b13630809127.png",
-    "static/media/revicons.eot": "/maddys-cream-bike-website/static/media/revicons.a77de540a38981833f9e.eot",
-    "static/media/revicons.ttf": "/maddys-cream-bike-website/static/media/revicons.57fd05d4ae650374c8de.ttf",
-    "static/media/revicons.woff": "/maddys-cream-bike-website/static/media/revicons.e8746a624ed098489406.woff",
-    "index.html": "/maddys-cream-bike-website/index.html",
-    "main.becd208b.css.map": "/maddys-cream-bike-website/static/css/main.becd208b.css.map",
-    "main.cb539800.js.map": "/maddys-cream-bike-website/static/js/main.cb539800.js.map",
-    "453.670e15c7.chunk.js.map": "/maddys-cream-bike-website/static/js/453.670e15c7.chunk.js.map"
+    "main.css": "/static/css/main.3e65b072.css",
+    "main.js": "/static/js/main.abbdfdd4.js",
+    "static/js/453.670e15c7.chunk.js": "/static/js/453.670e15c7.chunk.js",
+    "static/media/transparent_background_logo.png": "/static/media/transparent_background_logo.6100dfc1b13630809127.png",
+    "static/media/revicons.eot": "/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/static/media/revicons.e8746a624ed098489406.woff",
+    "index.html": "/index.html",
+    "main.3e65b072.css.map": "/static/css/main.3e65b072.css.map",
+    "main.abbdfdd4.js.map": "/static/js/main.abbdfdd4.js.map",
+    "453.670e15c7.chunk.js.map": "/static/js/453.670e15c7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.becd208b.css",
-    "static/js/main.cb539800.js"
+    "static/css/main.3e65b072.css",
+    "static/js/main.abbdfdd4.js"
   ]
 }
